@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms'
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { ToastrModule } from 'ngx-toastr';
 
 
 import { AppComponent } from './app.component';
@@ -17,7 +19,7 @@ import { EmployeeListComponent } from './employees/employee-list/employee-list.c
     EmployeeListComponent
   ],
   imports: [
-    BrowserModule, FormsModule
+    BrowserModule, FormsModule, HttpModule, ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

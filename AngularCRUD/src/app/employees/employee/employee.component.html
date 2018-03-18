@@ -1,11 +1,12 @@
-<form class="emp-form" #employeeForm="ngForm">
+<form class="emp-form" #employeeForm="ngForm" (ngSubmit)="onSubmit(employeeForm)">
+<input type="hidden" name="Id" #Id="ngModel" [(ngModel)] = "employeeService.selectedEmployee.Id">
 <div class="form-row">
   <div class="form-group col-md-6">
     <input class="form-control" name="FirstName" #FirstName="ngModel" [(ngModel)]="employeeService.selectedEmployee.FirstName" placeholder="FirstName" required>
     <div class="validation-error" *ngIf="FirstName.invalid && FirstName.touched">This Field is Required.</div>
   </div>
   <div class="form-group col-md-6">
-      <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="employeeService.selectedEmployee.LastNameName" placeholder="LastName" required>
+      <input class="form-control" name="LastName" #LastName="ngModel" [(ngModel)]="employeeService.selectedEmployee.LastName" placeholder="LastName" required>
       <div class="validation-error" *ngIf="LastName.invalid && LastName.touched">This Field is Required.</div>
   </div>
 </div>

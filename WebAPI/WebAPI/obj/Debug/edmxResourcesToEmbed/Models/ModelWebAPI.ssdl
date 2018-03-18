@@ -1,7 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="WebAPIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <!--Errors Found During Generation:
-warning 6002: The table/view 'WebAPI.dbo.Employee' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="Employee">
     <Key>
       <PropertyRef Name="Id" />
@@ -12,13 +10,6 @@ warning 6002: The table/view 'WebAPI.dbo.Employee' does not have a primary key d
     <Property Name="Email" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="WebAPIModelStoreContainer">
-    <EntitySet Name="Employee" EntityType="Self.Employee" store:Type="Tables" store:Schema="dbo">
-      <DefiningQuery>SELECT 
-    [Employee].[Id] AS [Id], 
-    [Employee].[FirstName] AS [FirstName], 
-    [Employee].[LastName] AS [LastName], 
-    [Employee].[Email] AS [Email]
-    FROM [dbo].[Employee] AS [Employee]</DefiningQuery>
-    </EntitySet>
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>
